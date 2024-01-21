@@ -70,6 +70,19 @@ document.getElementById('add-grocery-btn').addEventListener('click', function() 
     document.getElementById('grocery-input').value = ''; // Clear the input field
 });
 
+const icon = document.getElementById('refresh')
+
+icon.addEventListener('click', async function () {
+    fetchGroceryList()
+    icon.classList.add('spin');
+
+    // Remove the class after the animation completes
+    setTimeout(() => {
+        icon.classList.remove('spin');
+    }, 800);
+})
+
+
 function addGroceryItem(item) {
     fetch('https://secure-garden-42141-74fb08bc459f.herokuapp.com/api/grocery-list', {
         method: 'POST',
