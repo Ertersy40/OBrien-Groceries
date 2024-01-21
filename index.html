@@ -9,17 +9,35 @@
 <body>
     <h1>O'Brien Groceries</h1>
 
-    <div class="avg">
+    <div id="keypad-container">
+        <div id="display" class="display"></div>
+        <div class="keypad">
+            <button class="key">1</button>
+            <button class="key">2</button>
+            <button class="key">3</button>
+            <button class="key">4</button>
+            <button class="key">5</button>
+            <button class="key">6</button>
+            <button class="key">7</button>
+            <button class="key">8</button>
+            <button class="key">9</button>
+            <button class="key">0</button>
+            <button class="backspace">Delete</button>
+            <button class="enter">Enter</button>
+        </div>
+    </div>
+
+    <div id="avg">
         <h2>Average Weekly Spend:</h1>
         <h3 id="weeklySpend"></h2>
     </div>
 
-    <div class="contributions">
+    <div id="contributions">
         <h2 id="contributionsHead">Contributions:</h1>
         <table id="contributionStatus"></table>
     </div>
 
-    <div class="groceryList">
+    <div id="groceryList">
         <h3>Grocery List:</h2>
         <input type="text" id="grocery-input" placeholder="Enter grocery item" />
         <button id="add-grocery-btn">Add Item</button>
@@ -27,11 +45,12 @@
         <button id="remove-checked-btn">Remove Checked Items</button>
     </div>
 
-    <div class="transactions">
+    <div id="transactions-container">
         <h2>Transactions</h1>
         <div id="transactions"></div>
     </div>
 
+    <script src="Keypad.js"></script>
     <script src="Transactions.js"></script>
     <script src="Groceries.js"></script>
 </body>

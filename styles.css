@@ -29,12 +29,63 @@ h1{
     margin-top: 36px;
 }
 
+#avg, #contributions, #groceryList, #transactions-container{
+    display: none;
+}
+
+#keypad-container {
+    text-align: center;
+    margin-top: 14vh;
+    width: 200px;
+}
+
+.display {
+    border-radius: var(--big-border-radius);
+    color: black;
+    margin-bottom: 20px;
+    height: 50px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.key, .enter, .backspace{
+    padding: 10px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: var(--big-border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.key:hover, .enter:hover {
+    background-color: #cccccc;
+}
+
+.backspace{
+    background-color: #adadad;
+    grid-column: span 2;
+}
+.enter {
+    grid-column: span 3;
+    background-color: #4CAF50;
+    color: white;
+}
+
 #weeklySpend{
     text-align: center;
     font-size: 40px;
 }
 
-.contributions{
+#contributions{
     padding: var(--section-padding);
     line-height: 10px;
 }
@@ -106,7 +157,7 @@ label{
     color:black;
 }
 
-.groceryList {
+#groceryList {
     width: var(--section-width);
     padding: var(--section-padding);
     background-color: var(--note-color);
@@ -116,7 +167,7 @@ label{
 }
 
 /* Style for the headers */
-.groceryList h3 {
+#groceryList h3 {
     color: black;
     margin-bottom: 10px;
 }
@@ -163,7 +214,7 @@ label{
 }
 
 
-.transactions h2{
+#transactions-container h2{
     text-align: center;
     margin-bottom: 10px;
 }
