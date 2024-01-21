@@ -20,6 +20,9 @@ body{
     color: var(--font-color);
     row-gap: 25px;
 }
+button{
+    color: black;
+}
 
 h2, h3, p{
     margin-block: 0px;
