@@ -1,0 +1,185 @@
+:root {
+    --font-color: #FFFFFF;
+    --backgroundColor: #1A1A1A;
+    --good-color: #47CB26;
+    --bad-color: #A92525;
+    --note-color: #CBC87D;
+
+    --big-border-radius: 9px;
+    --little-border-radius: 3px;
+    --section-width: 240px;
+    --section-padding: 20px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--backgroundColor);
+    color: var(--font-color);
+    row-gap: 25px;
+}
+
+h2, h3, p{
+    margin-block: 0px;
+}
+
+h1{
+    margin-top: 36px;
+}
+
+#weeklySpend{
+    text-align: center;
+    font-size: 40px;
+}
+
+.contributions{
+    padding: var(--section-padding);
+    line-height: 10px;
+}
+
+#contributionStatus h2{
+    margin-block: 8px;
+}
+#contributionsHead{
+    margin-block: 20px;
+    text-align: center;
+}
+
+#contributionStatus{
+    width: var(--section-width);
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+    background-color: var(--font-color);
+    border-radius: var(--little-border-radius);
+}
+
+.tickLine1, .tickLine2{
+    position: absolute;
+    width: 4px;
+    border-radius: var(--little-border-radius);
+    background-color: var(--good-color);
+}
+.tickLine1{
+    margin-top: 1px;
+    margin-left: 10px;
+    height: 18px;
+    rotate: 45deg;
+}
+
+.tickLine2{
+    margin-left: 3px;
+    margin-top: 9px;
+    height: 9px;
+    rotate: -45deg;
+}
+
+.crossLine1, .crossLine2{
+    position: absolute;
+    margin-left: 8px;
+    margin-top: 1px;
+    width: 4px;
+    height: 18px;
+    border-radius: var(--little-border-radius);
+    background-color: var(--bad-color);
+}
+.crossLine1{
+    rotate: 45deg;
+}
+.crossLine2{
+    rotate: -45deg;
+}
+
+.has, #weeklySpend{
+    color: var(--good-color)
+}
+
+.hasNot{
+    color: var(--bad-color);
+}
+
+label{
+    color:black;
+}
+
+.groceryList {
+    width: var(--section-width);
+    padding: var(--section-padding);
+    background-color: var(--note-color);
+    border-radius: var(--big-border-radius);
+    font-family: 'Arial', sans-serif;
+    background-color: #fff8dc; /* Light yellow background like a notepad */
+}
+
+/* Style for the headers */
+.groceryList h3 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Style for the input field */
+#grocery-input {
+    border-radius: var(--big-border-radius);
+    width: calc(100% - var(--section-padding)); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d3d3d3;
+    background-color: #fff;
+    border: none;
+}
+
+/* Style for the buttons */
+#grocery-list, #add-grocery-btn, #remove-checked-btn {
+    border-radius: var(--big-border-radius);
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Style for the grocery list items */
+#grocery-list {
+    list-style-type: none;
+    padding: 0;
+    background-image: linear-gradient(to bottom, transparent, transparent 29px, #d3d3d3 29px);
+    background-size: 100% 30px;
+    min-height: 300px; /* Adjust as needed */
+}
+
+#grocery-list li {
+    padding-left: 10px;
+    line-height: 29px; /* Same as the line height in the background */
+    border-bottom: 1px solid #d3d3d3;
+}
+
+/* Style for checked items (optional) */
+#grocery-list li.checked {
+    text-decoration: line-through;
+}
+
+
+.transactions h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#transactions{
+    border: var(--font-color) solid 1px;
+    border-radius: var(--big-border-radius);
+    padding: var(--section-padding);
+    height: 300px;
+    width: var(--section-width);
+    overflow-y: scroll;
+    margin-bottom: 20px;
+}
+
+.transactionLine{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}

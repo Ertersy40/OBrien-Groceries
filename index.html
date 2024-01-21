@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>O'Brien Groceries</h1>
+
+    <div class="avg">
+        <h2>Average Weekly Spend:</h1>
+        <h3 id="weeklySpend"></h2>
+    </div>
+
+    <div class="contributions">
+        <h2 id="contributionsHead">Contributions:</h1>
+        <table id="contributionStatus"></table>
+    </div>
+
+    <div class="groceryList">
+        <h3>Grocery List:</h2>
+        <input type="text" id="grocery-input" placeholder="Enter grocery item" />
+        <button id="add-grocery-btn">Add Item</button>
+        <ul id="grocery-list"></ul>
+        <button id="remove-checked-btn">Remove Checked Items</button>
+    </div>
+
+    <div class="transactions">
+        <h2>Transactions</h1>
+        <div id="transactions"></div>
+    </div>
+
+    <script src="Transactions.js"></script>
+    <script src="Groceries.js"></script>
+</body>
+</html>
