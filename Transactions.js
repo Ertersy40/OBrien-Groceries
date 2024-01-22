@@ -6,7 +6,7 @@ const names = {
     'Mr William Charles O': 'Will',
     'Ms Emily Maude O': "Em",
     'Mr Bryce Kotas': 'Bryce',
-    'Lisal and Chuck O': 'Mum & Dad',
+    "C D O'Brien & L J DO": 'Mum & Dad',
 }
 
 function fetchTransactions() {
