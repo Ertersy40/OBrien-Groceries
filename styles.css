@@ -252,6 +252,10 @@ label{
     width: var(--section-width);
     overflow-y: scroll;
     margin-bottom: 20px;
+    margin-top: 0px;
+}
+#transactions > div:not(:first-child){
+    margin-top: 20px;
 }
 
 .transactionLine{
