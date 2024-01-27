@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const names = {
     'Mr William Charles O': 'Will',
-    'Ms Emily Maude O': "Em",
-    'Mr Bryce Kotas': 'Bryce',
+    "EMILY O'BRIEN": "Em & Bryce",
     "C D O'BRIEN & L J DO": 'Mum & Dad',
 }
 
@@ -39,7 +38,7 @@ function displayTransactions(data) {
     let weekSpend = {};
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
     const daysPerWeek = 7;
-    const requiredContribution = 50
+    const requiredContribution = 100
 
     for (const name in names) {
         counts[names[name]] = 0;
@@ -96,7 +95,7 @@ function displayTransactions(data) {
     // After processing all transactions, check if each person has met their contribution
     for (const [name, amount] of Object.entries(counts)) {
         const statusElement = document.createElement('tr');
-        if ((name == 'Mum & Dad' && amount >= requiredContribution * 2) || (name != 'Mum & Dad' && amount >= requiredContribution)){
+        if ((name == 'Will' && amount >= requiredContribution) || (name != 'Will' && amount >= requiredContribution * 50)){
             statusElement.innerHTML = `<td><h2 class='has'><b>${name}</b></h2></td><td><div class="checkbox"><div class="tickLine1"></div><div class="tickLine2"></div></div></td>`;
         } else {
             statusElement.innerHTML = `<td><h2 class='hasNot'><b>${name}</b></h2></td><td><div class="checkbox"><div class="crossLine1"></div><div class="crossLine2"></div></div></td>`;
