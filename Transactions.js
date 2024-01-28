@@ -38,7 +38,7 @@ function displayTransactions(data) {
     let weekSpend = {};
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
     const daysPerWeek = 7;
-    const requiredContribution = 100
+    const requiredContribution = 50
 
     for (const name in names) {
         counts[names[name]] = 0;
@@ -69,6 +69,8 @@ function displayTransactions(data) {
 
         // Calculate contribution per person for the current week
         if (sender in names){
+            // console.log(`amount: ${amount}, settled at: ${settledAt}, start of week:${startOfCurrentWeek}`)
+            // console.log('logically, settledAt >= startOfCurrentWeek', (settledAt >= startOfCurrentWeek))
             if (settledAt >= startOfCurrentWeek) {
                 counts[names[sender]] = (counts[names[sender]] || 0) + amount
             }
@@ -97,7 +99,9 @@ function displayTransactions(data) {
     // After processing all transactions, check if each person has met their contribution
     for (const [name, amount] of Object.entries(counts)) {
         const statusElement = document.createElement('tr');
-        if ((name == 'Will' && amount >= requiredContribution) || (name != 'Will' && amount >= requiredContribution * 50)){
+        // console.log(`name: ${name}, amount: ${amount}`)
+        // console.log('name != Will && amount >= requiredContribution * 2', (name != 'Will' && amount >= requiredContribution * 2))
+        if ((name == 'Will' && amount >= requiredContribution) || (name != 'Will' && amount >= requiredContribution * 2)){
             statusElement.innerHTML = `<td><h2 class='has'><b>${name}</b></h2></td><td><div class="checkbox"><div class="tickLine1"></div><div class="tickLine2"></div></div></td>`;
         } else {
             statusElement.innerHTML = `<td><h2 class='hasNot'><b>${name}</b></h2></td><td><div class="checkbox"><div class="crossLine1"></div><div class="crossLine2"></div></div></td>`;
