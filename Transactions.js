@@ -63,7 +63,9 @@ function displayTransactions(data) {
         const weekNumber = Math.floor((startOfWeek - startOfFirstWeek) / (millisecondsPerDay * daysPerWeek));
 
         // Update spend per week
-        weekSpend[weekNumber] = (weekSpend[weekNumber] || 0) + amount;
+        if (amount < 0){
+            weekSpend[weekNumber] = (weekSpend[weekNumber] || 0) + (amount * -1);
+        }
 
         // Calculate contribution per person for the current week
         if (sender in names){
